@@ -1,0 +1,23 @@
+<h1>Palindrome Tester</h1>
+<div>
+	<div *ngFor="let testCase of testList" class="case-container">
+		<div class="case-label">
+			<span>Case</span>
+			<span class="case-word">{{(testCase.word | json) || 'undefined'}}</span>
+		</div>
+		<div *ngIf="test(testCase) as result" class="case-result">
+			<span *ngIf="result.value !== undefined; else error">Got {{result.value}}</span>
+
+			<ng-template #error>
+				<span class="error-message">{{result.error}}</span>
+			</ng-template>
+
+			<ng-container *ngIf="result.pass; else fail">
+				<span class="case-result-pass">Pass</span>
+			</ng-container>
+			<ng-template #fail>
+				<span class="case-result-fail">Fail - Expected {{result.expected}}</span>
+			</ng-template>
+		</div>
+	</div>
+</div>
