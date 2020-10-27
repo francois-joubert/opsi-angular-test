@@ -1,0 +1,22 @@
+<h1>Number Tester</h1>
+<div>
+	<div *ngFor="let testResult of tests" class="case-container">
+		<div class="case-label">
+			<span>Case</span>
+			<span class="case">{{testResult.label}}</span>
+		</div>
+		<div>
+			<span *ngIf="testResult.value !== undefined; else error">Got {{testResult.value | json}}</span>
+			<ng-template #error>
+				<span class="error-message">{{testResult.error || 'NULL'}}</span>
+			</ng-template>
+
+			<ng-container *ngIf="testResult.pass; else fail">
+				<span class="case-result-pass">Pass</span>
+			</ng-container>
+			<ng-template #fail>
+				<span class="case-result-fail">Fail - Expected {{testResult.expected | json}}</span>
+			</ng-template>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+.case-container {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.case-label {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+
+.case-label > * {
+  margin-right: 5px;
+}
+
+.case {
+  font-family: monospace;
+  padding: 3px;
+  background-color: lightgray;
+  border-radius: 2px;
+}
+
+.case-result {
+  display: flex;
+}
+
+.case-result > * {
+  margin-right: 5px;
+}
+
+.error-message {
+  font-family: monospace;
+  padding: 2px;
+  background-color: lightsalmon;
+  border-radius: 2px;
+}
+
+.case-result-pass {
+  font-weight: bold;
+  color: green;
+}
+
+.case-result-fail {
+  color: red;
+}
