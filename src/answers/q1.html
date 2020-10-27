@@ -1,0 +1,11 @@
+<!-- 1a -->
+
+<div>
+	<span *ngFor="let item of items">{{item}}</span>
+</div>
+
+<!-- 1b -->
+
+<div>
+	<span *ngFor="let item of item$ | async">{{item}}</span>
+</div>

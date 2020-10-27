@@ -1,0 +1,15 @@
+<!-- 2a -->
+
+<div>
+	<ng-container *ngIf="number$ | async as number; else default">
+		<span>{{number}}</span>
+	</ng-container>
+	<!-- 2b -->
+	<ng-template #default>
+		<span>No current number</span>
+	</ng-template>
+</div>
+
+<!-- 2c -->
+
+<button (click)="onAddClick()">Add a number</button>
