@@ -6,7 +6,7 @@
 			<span class="case">{{testResult.label}}</span>
 		</div>
 		<div>
-			<span *ngIf="testResult.value !== undefined; else error">Got {{testResult.value | json}}</span>
+			<span *ngIf="testResult.value !== undefined; else error">Got {{testResult.value | json}} </span>
 			<ng-template #error>
 				<span class="error-message">{{testResult.error || 'NULL'}}</span>
 			</ng-template>

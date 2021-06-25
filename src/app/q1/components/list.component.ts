@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs";
-import { words, getStream } from "../../data/list";
+import { words, getStream } from "../data/list";
 
 @Component({
   selector: "app-list",

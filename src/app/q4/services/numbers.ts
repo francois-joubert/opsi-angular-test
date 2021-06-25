@@ -10,7 +10,7 @@ export const numbersTestList = [
       720301,
       247007,
       755233,
-      755475,
+      765475,
       516710,
       354273,
       416439,
@@ -645,7 +645,7 @@ export const numbersTestList = [
       115815,
       761292,
       330471,
-      314068,
+      314068, 
       635548,
       710400,
       936952,
@@ -1004,7 +1004,7 @@ export const numbersTestList = [
       998386,
       470098
     ],
-    res: [149, 654]
+    res: [568, 569]
   },
   { label: "N = 0", value: [], res: [0, 0] },
   { label: "undefined", value: undefined, res: [0, 0] },

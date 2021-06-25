@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import { NumberSearchService } from "../../services";
-import { numbersTestList } from "../../data/numbers";
+import { NumberSearchService, numbersTestList } from "../services";
 
 @Component({
   selector: "app-number-search-tester",
@@ -37,7 +36,8 @@ export class NumberSearchComponent
         pass:
           closestPair[0] == testCase.res[0] && closestPair[1] == testCase.res[1]
       };
-    } catch (e)
+    }
+    catch (e)
     {
       return {
         label: testCase.label,

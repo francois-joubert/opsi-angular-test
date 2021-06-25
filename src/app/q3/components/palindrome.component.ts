@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import { PalindromeService } from "../../services";
-import { palindromeTestList } from "../../data/palindromes";
+import { PalindromeService, palindromeTestList } from "../services";
 
 @Component({
   selector: "app-palindrome-tester",
@@ -27,7 +26,8 @@ export class PalindromeComponent
         expected: testCase.res,
         pass: isPalindrome == testCase.res
       };
-    } catch (e)
+    }
+    catch (e)
     {
       return {
         value: undefined,
