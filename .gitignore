@@ -1,0 +1,30 @@
+#Local Config
+.vs/
+.settings/
+.project
+.vscode
+.idea/
+
+# Dependencies
+packages/
+node_modules/
+
+# Artifacts
+**/bin/
+**/obj/
+**/dist/
+**/artifacts/
+
+# Testing
+TestResults/
+
+# User Files
+**/*.csproj.user
+*.suo
+*.log
+*.user
+
+# Plugins
+.graphqlconfig
+introspected-schema.graphql
+OpsiCloud.sln.startup.json

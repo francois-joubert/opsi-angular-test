@@ -1,0 +1,61 @@
+{
+  "help": "https://go.microsoft.com/fwlink/?linkid=866610",
+  "root": true,
+
+  "dependentFileProviders": {
+    "add": {
+      "extensionToExtension": {
+        "add": {
+          ".html": [
+            ".ts",
+            ".component.ts"
+          ],
+          ".scss": [
+            ".html"
+          ],
+          ".css": [
+            ".html"
+          ],
+          ".map": [
+            ".js",
+            ".css"
+          ],
+          ".spec.ts": [
+            ".component.ts"
+          ]
+        }
+      },
+      "fileSuffixToExtension": {
+        "add": {
+          "-body.fragment.gql": [
+            ".service.ts"
+          ],
+          "-test.config.js": [
+            ".config.js"
+          ]
+        }
+      },
+      "pathSegment": {
+        "add": {
+          ".*": [
+            ".js",
+            ".css",
+            ".html",
+            ".scss",
+            ".config",
+            ".cs",
+            ".json"
+          ]
+        }
+      },
+      "allExtensions": {
+        "add": {
+          ".*": [
+            ".tt"
+          ]
+        }
+      },
+      "fileToFile": {}
+    }
+  }
+}
