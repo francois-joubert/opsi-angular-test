@@ -7,7 +7,8 @@ import { numbersTestList } from "../../data/numbers";
   templateUrl: "./number-search.component.html",
   styleUrls: ["./number-search.component.css"]
 })
-export class NumberSearchComponent {
+export class NumberSearchComponent
+{
   public tests: {
     label: string;
     value: any;
@@ -16,12 +17,15 @@ export class NumberSearchComponent {
     pass: boolean;
   }[];
 
-  constructor(private _numberSearchService: NumberSearchService) {
+  constructor(private _numberSearchService: NumberSearchService)
+  {
     this.tests = numbersTestList.map(testCase => this.test(testCase));
   }
 
-  public test(testCase: any) {
-    try {
+  public test(testCase: any)
+  {
+    try
+    {
       let closestPair = this._numberSearchService.findClosestPair(
         testCase.value
       );
@@ -33,7 +37,8 @@ export class NumberSearchComponent {
         pass:
           closestPair[0] == testCase.res[0] && closestPair[1] == testCase.res[1]
       };
-    } catch (e) {
+    } catch (e)
+    {
       return {
         label: testCase.label,
         value: undefined,

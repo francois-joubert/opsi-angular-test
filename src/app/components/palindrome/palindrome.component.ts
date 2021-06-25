@@ -7,15 +7,19 @@ import { palindromeTestList } from "../../data/palindromes";
   templateUrl: "./palindrome.component.html",
   styleUrls: ["./palindrome.component.css"]
 })
-export class PalindromeComponent {
+export class PalindromeComponent
+{
   public testList: any[];
 
-  constructor(private _palindromeService: PalindromeService) {
+  constructor(private _palindromeService: PalindromeService)
+  {
     this.testList = palindromeTestList;
   }
 
-  public test(testCase: any) {
-    try {
+  public test(testCase: any)
+  {
+    try
+    {
       let isPalindrome = this._palindromeService.isPalindrome(testCase.word);
 
       return {
@@ -23,7 +27,8 @@ export class PalindromeComponent {
         expected: testCase.res,
         pass: isPalindrome == testCase.res
       };
-    } catch (e) {
+    } catch (e)
+    {
       return {
         value: undefined,
         error: e.message,

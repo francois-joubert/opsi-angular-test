@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { Observable } from "rxjs";
 import { words, getStream } from "../../data/list";
 
@@ -7,11 +7,13 @@ import { words, getStream } from "../../data/list";
   templateUrl: "./list.component.html",
   styleUrls: ["./list.component.css"]
 })
-export class ListComponent {
+export class ListComponent
+{
   public items: string[];
   public items$: Observable<string[]>;
 
-  constructor() {
+  constructor()
+  {
     this.items = words;
     this.items$ = getStream();
   }

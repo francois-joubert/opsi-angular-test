@@ -1,8 +1,10 @@
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class NumberSearchService {
-  public findClosestPair(numbers: number[]): [number, number] {
+export class NumberSearchService
+{
+  public findClosestPair(numbers: number[]): [number, number]
+  {
     // Given a large array x, of n positive integers values with n > 1 000 000 000.
     // Write a function, using any standard built in functions,
     // that finds the two element indices with the closest values in the array

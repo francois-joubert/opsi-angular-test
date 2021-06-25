@@ -1,10 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-numbers",
   templateUrl: "./numbers.component.html",
   styleUrls: ["./numbers.component.css"]
 })
-export class NumbersComponent {
-  constructor() {}
+export class NumbersComponent
+{
+  constructor() { }
 }
