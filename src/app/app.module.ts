@@ -8,14 +8,27 @@ import { NumbersComponent } from "./q2/components/numbers.component";
 import { PalindromeComponent } from "./q3/components/palindrome.component";
 import { NumberSearchComponent } from "./q4/components/number-search.component";
 
-import { NumberService } from "./q2/services/number.service";
+import { RandomNumberService } from "./q2/services/random-number.service";
 import { PalindromeService } from "./q3/services/palindrome.service";
 import { NumberSearchService } from "./q4/services/number-search.service";
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, ListComponent, NumbersComponent, PalindromeComponent, NumberSearchComponent],
-  providers: [NumberService, PalindromeService, NumberSearchService],
+  imports: [
+    BrowserModule, 
+    FormsModule
+  ],
+  declarations: [
+    AppComponent, 
+    ListComponent, 
+    NumbersComponent, 
+    PalindromeComponent, 
+    NumberSearchComponent
+  ],
+  providers: [
+    RandomNumberService, 
+    PalindromeService, 
+    NumberSearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

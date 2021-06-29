@@ -2,22 +2,22 @@ import { Injectable } from "@angular/core";
 import { Observable, Subject } from "rxjs";
 
 @Injectable()
-export class NumberService
+export class RandomNumberService
 {
-  private _numberSubject: Subject<number>;
+  private _subject: Subject<number>;
 
   constructor()
   {
-    this._numberSubject = new Subject();
+    this._subject = new Subject();
   }
 
   public getCurrentNumber(): Observable<number>
   {
-    return this._numberSubject.asObservable();
+    return this._subject.asObservable();
   }
 
   public generateNewNumber()
   {
-    this._numberSubject.next(Math.floor(Math.random() * 1000));
+    this._subject.next(Math.floor(Math.random() * 1000));
   }
 }

@@ -1,6 +1,48 @@
 <ng-container [ngSwitch]="q">
-  <app-list *ngSwitchCase="1"></app-list>
-  <app-numbers *ngSwitchCase="2"></app-numbers>
-  <app-palindrome-tester *ngSwitchCase="3"></app-palindrome-tester>
-  <app-number-search-tester *ngSwitchCase="4"></app-number-search-tester>
+  <ng-container *ngSwitchCase="1">
+    <h2>Question 1a</h2>
+    <span>
+      Given a property of this component: 
+      <pre>  public items: string[];</pre>
+      Write the template part that would generate a span for each item, 
+      all contained in a single div.
+    </span>
+
+    <h2>Question 1b</h2>
+    <span>
+      Given a second property of this component:
+      <pre>  public items$: Observable&lt;string[]&gt;;</pre>
+      Copy the above template and adapt it to generate a span for each item in the observable array.
+    </span>
+    <app-list></app-list>
+  </ng-container>  
+
+  <ng-container *ngSwitchCase="2">
+    <h2>Question 2</h2>
+    <span>
+      Given a service that generates random numbers:
+    <pre>
+    @Injectable()
+    class RandomNumberService
+    &#123;
+      public getCurrentNumber(): Observable&lt;number&gt;;
+      public generateNewNumber(): void;
+    &#125;
+    </pre>
+      Import the <i>RandomNumberService</i> into this component and write the template part that would display the number value from <i>getCurrentNumber()</i> in the div below. <br>
+      The first value received will be undefined - handle this case with a default message.
+    </span>
+    <span>
+      Use the button below to call <i>generateNewNumber()</i> and update the current-number.
+    </span>
+    <app-numbers></app-numbers>
+  </ng-container>
+  
+  <ng-container *ngSwitchCase="3">
+    <app-palindrome-tester></app-palindrome-tester>
+  </ng-container>
+  
+  <ng-container *ngSwitchCase="4">
+    <app-number-search-tester></app-number-search-tester>
+  </ng-container>
 </ng-container>
