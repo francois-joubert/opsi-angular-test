@@ -4,6 +4,13 @@
     <span mono>ERROR: You got yourself an index out of bounds exception!</span>
   </ng-container>
 
+  <ng-container *ngSwitchCase="99">
+    <div flx v sacc plain>
+    <h1>Good luck!</h1>
+      <button (click)="onClick()" style="width:100px">Start</button>
+    </div>
+  </ng-container>
+
   <ng-container *ngSwitchCase="0">
     <h2>Question 0</h2>
     <span text>Given your best friend, that is his own worst enemy and an enemy of a friend is an enemy.</span>
@@ -82,11 +89,17 @@
     </span>
     <app-number-search-tester></app-number-search-tester>
   </ng-container>
+
+  <ng-container *ngSwitchCase="5">
+    <span text>No further questions, your honor.</span>
+  </ng-container>
 </div>
 
-<div flx-spacer plain></div>
-<div flx-sep plain style="margin:0 10px"></div>
-<div flx jc sdm10 p10 plain>
-  <button (click)="onClick(-1)" style="width:100px">Previous</button>
-  <button (click)="onClick(1)" style="width:100px">Next</button>
-</div>
+<ng-container *ngIf="q != 99">
+  <div flx-spacer plain></div>
+  <div flx-sep plain style="margin:0 10px"></div>
+  <div flx jc sdm10 p10 plain>
+    <button (click)="onClick(-1)" style="width:100px">Previous</button>
+    <button (click)="onClick(1)" style="width:100px">Next</button>
+  </div>
+</ng-container>

@@ -14,8 +14,8 @@ export class AppComponent
     let q = localStorage.getItem("q");
     if (!q)
     {
-      localStorage.setItem("q", "1");
-      q = "1";
+      localStorage.setItem("q", "99");
+      q = "99";
     }
 
     this.q = +q;
@@ -23,7 +23,14 @@ export class AppComponent
 
   public onClick(dir: number)
   {
-    this.q += dir;
+    if (!dir)
+    {
+      this.q = 1;
+    }
+    else
+    {
+      this.q += dir;
+    }
     localStorage.setItem("q", this.q.toString());
   }
 }
