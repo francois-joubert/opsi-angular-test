@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { PalindromeService, palindromeTestList } from "../services";
+import { palindromeTestList } from "../../q-data/palindromes";
+import { PalindromeService } from "../services/palindrome.service";
 
 @Component({
   selector: "app-palindrome-tester",

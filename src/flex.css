@@ -1,0 +1,660 @@
+﻿/* ========================
+   ---[CONTAINER]---------- 
+   ========================*/
+
+.flx, [flx] {
+  display: flex;
+}
+
+  .flx.v, [flx][v] { /*vertical*/
+    flex-direction: column;
+  }
+
+  [flx][rc] { /*route-container auto expand*/
+    flex: 1 0 0%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+    [flx][rc] > *:not(router-outlet) { /*route-container content*/
+      flex: 1 1 0;
+      overflow: hidden;
+    }
+
+  [flx][oh] {
+    overflow: hidden;
+  }
+
+  /* ===[Expansion]============== */
+
+  [flx][fix], [flx-fix] { /*fix*/
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+
+  [flx][exp], [flx-exp] { /*expand*/
+    flex: 1 0 0%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  [flx][max], [flx-max] /*expand and overflow*/ {
+    flex: 1 0 auto;
+  }
+
+  /* ===[Scrolling]============== */
+
+  [flx][scrl] { /*expand scroll both*/
+    flex: 1 1 0;
+    overflow: auto;
+  }
+
+  [flx][scrlv] { /*expand scroll vertical*/
+    flex-direction: column;
+    flex: 1 1 0;
+    overflow-y: auto;
+  }
+
+  [flx][scrlh] { /*expand scroll horizontal*/
+    flex: 1 1 0;
+    overflow-x: auto;
+  }
+
+  /* ===[Justification]============== */
+
+  .flx.js, [flx][js] {
+    justify-content: flex-start;
+  }
+
+  .flx.je, [flx][je] {
+    justify-content: flex-end;
+  }
+
+  .flx.jc, [flx][jc] {
+    justify-content: center;
+  }
+
+  .flx.jsb, [flx][jsb] {
+    justify-content: space-between;
+  }
+
+  .flx.jsa, [flx][jsa] {
+    justify-content: space-around;
+  }
+
+  .flx.jd > *, .flx.jdp > *, [flx][jd] > *, [flx][jdp] > * { /*justify distributed (padded)*/
+    flex: 1 1 0;
+  }
+
+    .flx.jdp > *:not(:last-child), [flx][jdp] > *:not(:last-child) { /*justify distributed padded*/
+      margin-right: 10px;
+    }
+
+  /* ===[Alignment]============== */
+
+  .flx.as, [flx][as] {
+    align-items: flex-start;
+  }
+
+  .flx.ac, [flx][ac] {
+    align-items: center;
+  }
+
+  .flx.ab, [flx][ab] {
+    align-items: baseline;
+  }
+
+  .flx.ae, [flx][ae] {
+    align-items: flex-end;
+  }
+
+  .flx.ad > *, .flx.adp > *, [flx][ad] > *, [flx][adp] > * { /*justify distributed (padded)*/
+    flex: 1 1 0;
+  }
+
+    .flx.adp > *:not(:last-child), [flx][adp] > *:not(:last-child) { /*justify distributed padded*/
+      margin-right: 10px;
+    }
+
+  /* ===[Smart Align]============== */
+
+  /* ---[Top]-------------- */
+
+  [flx]:not([v])[sat] { /*h*/
+    align-items: flex-start; /*top*/
+  }
+
+  [flx][v][sat] { /*v*/
+    justify-content: flex-start; /*top*/
+  }
+
+  [flx][satl] { /*h v*/
+    align-items: flex-start; /*top*/
+    justify-content: flex-start; /*left*/
+  }
+
+  [flx]:not([v])[satc] { /*h*/
+    align-items: flex-start; /*top*/
+    justify-content: center; /*center*/
+  }
+
+  [flx][v][satc] { /*v*/
+    justify-content: flex-start; /*top*/
+    align-items: center; /*center*/
+  }
+
+  [flx]:not([v])[satr] { /*h*/
+    align-items: flex-start; /*top*/
+    justify-content: flex-end; /*right*/
+  }
+
+  [flx][v][satr] { /*v*/
+    justify-content: flex-start; /*top*/
+    align-items: flex-end; /*right*/
+  }
+
+  /* ---[Center]-------------- */
+
+  [flx]:not([v])[sac] { /*h*/
+    align-items: center; /*center*/
+  }
+
+  [flx][v][sac] { /*v*/
+    justify-content: center; /*center*/
+  }
+
+  [flx]:not([v])[sacl] { /*h*/
+    align-items: center; /*center*/
+    justify-content: flex-start; /*left*/
+  }
+
+  [flx][v][sacl] { /*v*/
+    justify-content: center; /*center*/
+    align-items: flex-start; /*left*/
+  }
+
+  [flx][sacc] { /*h v*/
+    align-items: center; /*center*/
+    justify-content: center; /*center*/
+  }
+
+  [flx]:not([v])[sacr] { /*h*/
+    align-items: center; /*center*/
+    justify-content: flex-end; /*right*/
+  }
+
+  [flx][v][sacr] { /*v*/
+    justify-content: center; /*center*/
+    align-items: flex-end; /*right*/
+  }
+
+  /* ---[Bottom]-------------- */
+
+  [flx]:not([v])[sab] { /*h*/
+    align-items: flex-end; /*bottom*/
+  }
+
+  [flx][v][sab] { /*v*/
+    justify-content: flex-end; /*bottom*/
+  }
+
+  [flx]:not([v])[sabl] { /*h*/
+    align-items: flex-end; /*bottom*/
+    justify-content: flex-start; /*left*/
+  }
+
+  [flx][v][sabl] { /*v*/
+    justify-content: flex-end; /*bottom*/
+    align-items: flex-start; /*left*/
+  }
+
+  [flx]:not([v])[sabc] { /*h*/
+    align-items: flex-end; /*bottom*/
+    justify-content: center; /*center*/
+  }
+
+  [flx][v][sabc] { /*v*/
+    justify-content: flex-end; /*bottom*/
+    align-items: center; /*center*/
+  }
+
+  [flx][sabr] { /*h v*/
+    align-items: flex-end; /*bottom*/
+    justify-content: flex-end; /*right*/
+  }
+
+  /* ---[Stretch]-------------- */
+
+  [flx]:not([v])[sas] { /*h*/
+    align-items: stretch; /*stretch*/
+  }
+
+  [flx][v][sas] { /*v*/
+    justify-content: inherit; /*stretch*/
+  }
+
+  /* ===[Smart Distribute]============== */
+
+  /* ---[fixed p3]-------------- */
+
+  [flx]:not([v])[sdm3] > *:not(:last-child) { /*h*/
+    margin-right: 3px;
+  }
+
+  [flx][v][sdm3] > *:not(:last-child) { /*v*/
+    margin-bottom: 3px;
+  }
+
+  /* ---[fixed p5]-------------- */
+
+  [flx]:not([v])[sdm5] > *:not(:last-child) { /*h*/
+    margin-right: 5px;
+  }
+
+  [flx][v][sdm5] > *:not(:last-child) { /*v*/
+    margin-bottom: 5px;
+  }
+
+  /* ---[fixed p10]-------------- */
+
+  [flx]:not([v])[sdm10] > *:not(:last-child) { /*h*/
+    margin-right: 10px;
+  }
+
+  [flx][v][sdm10] > *:not(:last-child) { /*v*/
+    margin-bottom: 10px;
+  }
+
+  /* ---[stretch p5]-------------- */
+
+  [flx][sdsm5] > *, [flx][sdsm10] > * { /*h*/
+    flex-grow: 1;
+  }
+
+  [flx]:not([v])[sdsm5] > *:not(:last-child) { /*h*/
+    margin-right: 5px;
+  }
+
+  [flx][v][sdsm5] > *:not(:last-child) { /*v*/
+    margin-bottom: 5px;
+  }
+
+  /* ---[stretch p10]-------------- */
+
+  [flx]:not([v])[sdsm10] > *:not(:last-child) { /*h*/
+    margin-right: 5px;
+  }
+
+  [flx][v][sdsm10] > *:not(:last-child) { /*v*/
+    margin-bottom: 5px;
+  }
+
+  /*============================*/
+
+  /* ===[Padding]============== */
+
+  .flx.pad-s, [flx][p3] {
+    padding: 3px;
+  }
+
+  .flx.pad, [flx][p5] {
+    padding: 5px;
+  }
+
+  .flx.pad-l, [flx][p10] {
+    padding: 10px;
+  }
+
+  .flx.pad-xl, [flx][p20] {
+    padding: 20px;
+  }
+
+  .flx.pad-xxl, [flx][p30] {
+    padding: 30px;
+  }
+
+  .flx.pad-xxl, [flx][p50] {
+    padding: 50px;
+  }
+
+  .flx.pad-xxl, [flx][p100] {
+    padding: 100px;
+  }
+
+  [flx][pl5] {
+    padding-left: 5px;
+  }
+
+  [flx][pl10] {
+    padding-left: 10px;
+  }
+
+  [flx][pr5] {
+    padding-right: 5px;
+  }
+
+  [flx][pr10] {
+    padding-right: 10px;
+  }
+
+  [flx][pt5] {
+    padding-top: 5px;
+  }
+
+  [flx][pt10] {
+    padding-top: 10px;
+  }
+
+  [flx][pb5] {
+    padding-bottom: 5px;
+  }
+
+  [flx][pb10] {
+    padding-bottom: 10px;
+  }
+
+  /* ===[Margin]============== */
+
+  .flx.pad-s, [flx][m3] {
+    margin: 3px;
+  }
+
+  .flx.pad, [flx][m5] {
+    margin: 5px;
+  }
+
+  .flx.pad-l, [flx][m10] {
+    margin: 10px;
+  }
+
+  .flx.pad-xl, [flx][m20] {
+    margin: 20px;
+  }
+
+  .flx.pad-xxl, [flx][m30] {
+    margin: 30px;
+  }
+
+  .flx.pad-xxl, [flx][m50] {
+    margin: 50px;
+  }
+
+  .flx.pad-xxl, [flx][m100] {
+    margin: 100px;
+  }
+
+  [flx][ml5] {
+    margin-left: 5px;
+  }
+
+  [flx][ml10] {
+    margin-left: 10px;
+  }
+
+  [flx][mr5] {
+    margin-right: 5px;
+  }
+
+  [flx][mr10] {
+    margin-right: 10px;
+  }
+
+  [flx][mt5] {
+    margin-top: 5px;
+  }
+
+  [flx][mt10] {
+    margin-top: 10px;
+  }
+
+  [flx][mb5] {
+    margin-bottom: 5px;
+  }
+
+  [flx][mb10] {
+    margin-bottom: 10px;
+  }
+
+  /* ===[Wrapping]============== */
+
+  .flx.wrap, [flx][wrap] {
+    flex-wrap: wrap;
+  }
+
+/* ========================
+   ---[CHILD]-------------- 
+   ========================*/
+
+/* ===[Self Alignment]============== */
+
+.flx-as, [flx-as] {
+  align-self: flex-start;
+}
+
+.flx-ac, [flx-ac] {
+  align-self: center;
+}
+
+.flx-ae, [flx-ae] {
+  align-self: flex-end;
+}
+
+.flx-ast, [flx-ast] {
+  align-self: stretch;
+}
+
+/* ===[Size]============== */
+
+.flx-0-1, [fix-0-1] {
+  flex: 0 0 1.39%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-0-2, [fix-0-2] {
+  flex: 0 0 2.78%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-0-3, [fix-0-3] {
+  flex: 0 0 4.17%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-0-4, [fix-0-4] {
+  flex: 0 0 5.56%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-0-5, [fix-0-5] {
+  flex: 0 0 6.94%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-1, [fix-1], [f1] {
+  flex: 0 0 8.33%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-1-1, [fix-1-1] {
+  flex: 0 0 9.72%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-1-2, [fix-1-2] {
+  flex: 0 0 11.11%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-1-3, [fix-1-3] {
+  flex: 0 0 12.5%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-1-4, [fix-1-4] {
+  flex: 0 0 13.89%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-1-5, [fix-1-5] {
+  flex: 0 0 15.27%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-2, [fix-2], [f2] {
+  flex: 0 0 16.67%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-3, [fix-3], [f3] {
+  flex: 0 0 25%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-4, [fix-4], [f4] {
+  flex: 0 0 33.33%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-5, [fix-5], [f5] {
+  flex: 0 0 41.67%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-6, [fix-6], [f6] {
+  flex: 0 0 50%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-7, [fix-7], [f7] {
+  flex: 0 0 58.33%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-8, [fix-8], [f8] {
+  flex: 0 0 66.67%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-9, [fix-9], [f9] {
+  flex: 0 0 75%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-10, [fix-10], [f10] {
+  flex: 0 0 83.33%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-11, [fix-11], [f11] {
+  flex: 0 0 91.67%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-12, [fix-12] {
+  flex: 0 0 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ===[Expansion]============== */
+
+.flx-fix, [flx-fix] {
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-fill {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.flx-exp {
+  flex: 1 0 auto;
+}
+
+/* ===[Scrolling]============== */
+
+.flx-fsxy {
+  flex: 1 1 0;
+  overflow: auto;
+}
+
+.flx-fsx {
+  display: flex;
+  flex: 1 1 0;
+  overflow-x: auto;
+}
+
+.flx-fsy {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  overflow-y: auto;
+}
+
+/* ===[Separation]============== */
+
+[flx-sep] {
+  flex: 0 0 auto;
+  align-self: stretch;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
+  [flx-sep][dark] {
+    border-bottom-color: gray;
+    border-right-color: gray;
+  }
+
+[flx][v] > [flx-sep][m3] {
+  margin: 3px 0;
+}
+
+[flx]:not([v]) > [flx-sep][m3] {
+  margin: 0 3px;
+}
+
+[flx][v] > [flx-sep][m5] {
+  margin: 5px 0;
+}
+
+[flx]:not([v]) > [flx-sep][m5] {
+  margin: 0 5px;
+}
+
+[flx][v] > [flx-sep][pad], .flx.v > [flx-sep][pad] {
+  margin: 5px 0;
+}
+
+[flx]:not([v]) > [flx-sep][pad], .flx:not(.v) > [flx-sep][pad] {
+  margin: 0 5px;
+}
+
+[flx-spacer], .flx-spacer {
+  flex-grow: 0;
+  margin-left: auto;
+  margin-top: auto;
+}

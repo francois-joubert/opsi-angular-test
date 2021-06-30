@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { NumberSearchService, numbersTestList } from "../services";
+import { numbersTestList } from "../../q-data/numbers";
+import { NumberSearchService } from "../services/number-search.service";
 
 @Component({
   selector: "app-number-search-tester",

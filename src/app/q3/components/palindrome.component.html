@@ -1,11 +1,11 @@
-<h1>Palindrome Tester</h1>
-<div>
-	<div *ngFor="let testCase of testList" class="case-container">
-		<div class="case-label">
+<h3>Tester</h3>
+<div plain>
+	<div *ngFor="let testCase of testList" plain class="case-container">
+		<div plain class="case-label">
 			<span>Case</span>
 			<span class="case-word">{{(testCase.word | json) || 'undefined'}}</span>
 		</div>
-		<div *ngIf="test(testCase) as result" class="case-result">
+		<div *ngIf="test(testCase) as result" plain class="case-result">
 			<span *ngIf="result.value !== undefined; else error">Got {{result.value}}</span>
 
 			<ng-template #error>

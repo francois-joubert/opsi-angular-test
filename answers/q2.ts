@@ -1,17 +1,17 @@
-import { Component, Input } from "@angular/core";
+import { Component } from "@angular/core";
 import { Observable } from "rxjs";
-import { NumberService } from "../services/number.service";
+
+import { RandomNumberService } from "../services/random-number.service";
 
 @Component({
   selector: "app-numbers",
-  templateUrl: "./numbers.component.html",
-  styleUrls: ["./numbers.component.css"]
+  templateUrl: "./numbers.component.html"
 })
 export class NumbersComponent
 {
   public number$: Observable<number>;
 
-  constructor(private _numberService: NumberService)
+  constructor(private _numberService: RandomNumberService)
   {
     this.number$ = _numberService.getCurrentNumber();
   }
@@ -21,3 +21,4 @@ export class NumbersComponent
     this._numberService.generateNewNumber();
   }
 }
+

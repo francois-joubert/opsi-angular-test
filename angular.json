@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/flex.css",
               "src/styles.css"
             ],
             "scripts": []

@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { ListComponent } from "./q1/components/list.component";
+import { ListComponent } from "./q1/list.component";
 import { NumbersComponent } from "./q2/components/numbers.component";
 import { PalindromeComponent } from "./q3/components/palindrome.component";
 import { NumberSearchComponent } from "./q4/components/number-search.component";
