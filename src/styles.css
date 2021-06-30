@@ -1,5 +1,6 @@
 body {
   font-family: system-ui;
+  height: 100vh;
 }
 
 div:not([plain]) {
@@ -34,5 +35,5 @@ span[mono] {
 
 button {
   padding: 10px 20px;
-  /*margin-left: 20px;*/
+  margin-bottom: 10px;
 }
