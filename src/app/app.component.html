@@ -1,105 +1,112 @@
-<div flx v [ngSwitch]="q" plain style="padding:20px">
-  <ng-container *ngSwitchDefault>
-    <h2>Question {{q}}</h2>
-    <span mono>ERROR: You got yourself an index out of bounds exception!</span>
-  </ng-container>
+﻿<ng-template #showStart>
+  <div flx v sacc plain>
+    <h1>Opsi Coding Test</h1>
+    <h2>Good luck!</h2>
+    <button (click)="onStartClick()" style="width:100px">Start</button>
+  </div>
+</ng-template>
 
-  <ng-container *ngSwitchCase="99">
-    <div flx v sacc plain>
-    <h1>Good luck!</h1>
-      <button (click)="onClick()" style="width:100px">Start</button>
-    </div>
-  </ng-container>
+<ng-container *ngIf="startTime; else showStart">
+  <div flx v [ngSwitch]="q" plain style="padding:20px">
+    <ng-container *ngSwitchDefault>
+      <h2>Question {{q}}</h2>
+      <span mono>ERROR: You got yourself an index out of bounds exception!</span>
+    </ng-container>
 
-  <ng-container *ngSwitchCase="0">
-    <h2>Question 0</h2>
-    <span text>Given your best friend, that is his own worst enemy and an enemy of a friend is an enemy.</span>
-    <span text>So, does that make your best friend also your enemy?</span>
-  </ng-container>
+    <ng-container *ngSwitchCase="0">
+      <h2>Question 0</h2>
+      <span text>Given your best friend, that is his own worst enemy and an enemy of a friend is an enemy.</span>
+      <span text>So, does that make your best friend also your enemy?</span>
+    </ng-container>
 
-  <ng-container *ngSwitchCase="1">
-    <h2>Question 1a</h2>
-    <span nav>Navigate to: src/app/q1/list.component.html</span>
-    <span text>Given a property of this component:</span>
-    <span mono>public items: string[];</span>
-    <span text>Write the template part that would generate a span for each item, all contained in a single div.</span>
-    <h2>Question 1b</h2>
-    <span text>Given a second property of this component:</span>
-    <span mono>  public items$: Observable&lt;string[]&gt;;</span>
-    <span text>Copy the above template and adapt it to generate a span for each item in the observable array.</span>
-    <app-list></app-list>
-  </ng-container>
+    <ng-container *ngSwitchCase="1">
+      <h2>Question 1a</h2>
+      <span nav>Navigate to: src/app/q1/list.component.html</span>
+      <span text>Given a property of this component:</span>
+      <span mono>public items: string[];</span>
+      <span text>Write the template part that would generate a span for each item, all contained in a single div.</span>
+      <h2>Question 1b</h2>
+      <span text>Given a second property of this component:</span>
+      <span mono>  public items$: Observable&lt;string[]&gt;;</span>
+      <span text>Copy the above template and adapt it to generate a span for each item in the observable array.</span>
+      <app-list></app-list>
+    </ng-container>
 
-  <ng-container *ngSwitchCase="2">
-    <h2>Question 2</h2>
-    <span nav>Navigate to: src/app/q2/components/numbers.component.html</span>
-    <span text>Given a service that generates random numbers:</span>
-    <span mono>
-      @Injectable()<br>
-      class RandomNumberService<br>
-      &#123;<br>
-      &nbsp;&nbsp;public getCurrentNumber(): Observable&lt;number&gt;;<br>
-      &nbsp;&nbsp;public generateNewNumber(): void;<br>
-      &#125;<br>
-    </span>
-    <span text>
-      Import the <i>RandomNumberService</i> into this component and write the template part that would display
-      the number value from <i>getCurrentNumber()</i> inside the div.<br>
-      The first value received will be undefined - handle this case with a default message.<br>
-      <br>
-      Use the button below to call <i>generateNewNumber()</i> to update the current-number.
-    </span>
-    <app-numbers></app-numbers>
-  </ng-container>
+    <ng-container *ngSwitchCase="2">
+      <h2>Question 2</h2>
+      <span nav>Navigate to: src/app/q2/components/numbers.component.html</span>
+      <span text>Given a service that generates random numbers:</span>
+      <span mono>
+        @Injectable()<br>
+        class RandomNumberService<br>
+        &#123;<br>
+        &nbsp;&nbsp;public getCurrentNumber(): Observable&lt;number&gt;;<br>
+        &nbsp;&nbsp;public generateNewNumber(): void;<br>
+        &#125;<br>
+      </span>
+      <span text>
+        Import the <i>RandomNumberService</i> into this component and write the template part that would display
+        the number value from <i>getCurrentNumber()</i> inside the div.<br>
+        The first value received will be undefined - handle this case with a default message.<br>
+        <br>
+        Use the button below to call <i>generateNewNumber()</i> to update the current-number.
+      </span>
+      <app-numbers></app-numbers>
+    </ng-container>
 
-  <ng-container *ngSwitchCase="3">
-    <h2>Question 3</h2>
-    <span nav>Navigate to: src/app/q3/services/palindrome.service.ts</span>
-    <span text>
-      A palindrome is a word that is the same if it is read forwards or backwards
-      like 'pop', 'madam' or 'racecar'.<br>
-      Expand this method, using any standard built in functions, that would test
-      if the input argument is a palindrome. It should return <i>true</i> if the argument
-      is a palindrome and <i>false</i> otherwise.
-    </span>
-    <app-palindrome-tester></app-palindrome-tester>
-  </ng-container>
+    <ng-container *ngSwitchCase="3">
+      <h2>Question 3</h2>
+      <span nav>Navigate to: src/app/q3/services/palindrome.service.ts</span>
+      <span text>
+        A palindrome is a word that is the same if it is read forwards or backwards
+        like 'pop', 'madam' or 'racecar'.<br>
+        Expand this method, using any standard built in functions, that would test
+        if the input argument is a palindrome. It should return <i>true</i> if the argument
+        is a palindrome and <i>false</i> otherwise.
+      </span>
+      <app-palindrome-tester></app-palindrome-tester>
+    </ng-container>
 
-  <ng-container *ngSwitchCase="4">
-    <h2>Question 4</h2>
-    <span nav>Navigate to: src/app/q4/services/number-search.service.ts</span>
-    <span text>
-      Given that the input argument is a large array of positive integers
-      with length > 1 000 000 000.<br>
-      <br>
-      Expand this method, using any standard built in functions, that would
-      find the two indices of the numbers with the smallest numeric difference,
-      as efficiently as possible.<br>
-      <br>
-    </span>
-    <span text>
-      For example, given an array with 10 numbers:
-    </span>
-    <span mono>
-      x = [99, 3, 12, 0, 18, 4, 22, 191, 7, 42]
-    </span>
-    <span text>
-      Then the answer would be [1, 5], since x[1] = 3 and x[5] = 4 have the
-      smallest difference of 1.
-    </span>
-    <app-number-search-tester></app-number-search-tester>
-  </ng-container>
+    <ng-container *ngSwitchCase="4">
+      <h2>Question 4</h2>
+      <span nav>Navigate to: src/app/q4/services/number-search.service.ts</span>
+      <span text>
+        Given that the input argument is a large array of positive integers
+        with length > 1 000 000 000.<br>
+        <br>
+        Expand this method, using any standard built in functions, that would
+        find the two indices of the numbers with the smallest numeric difference,
+        as efficiently as possible.<br>
+        <br>
+      </span>
+      <span text>
+        For example, given an array with 10 numbers:
+      </span>
+      <span mono>
+        x = [99, 3, 12, 0, 18, 4, 22, 191, 7, 42]
+      </span>
+      <span text>
+        Then the answer would be [1, 5], since x[1] = 3 and x[5] = 4 have the
+        smallest difference of 1.
+      </span>
+      <app-number-search-tester></app-number-search-tester>
+    </ng-container>
 
-  <ng-container *ngSwitchCase="5">
-    <span text>No further questions, your honor.</span>
-  </ng-container>
-</div>
+    <ng-container *ngSwitchCase="5">
+      <span text>No further questions, your honor.</span>
+    </ng-container>
+  </div>
 
-<ng-container *ngIf="q != 99">
   <div flx-spacer plain></div>
   <div flx-sep plain style="margin:0 10px"></div>
-  <div flx jc sdm10 p10 plain>
-    <button (click)="onClick(-1)" style="width:100px">Previous</button>
-    <button (click)="onClick(1)" style="width:100px">Next</button>
+  <div flx ac jsb p10 plain>
+    <div *ngIf="timeLeft > 0; else showStop" plain class="time">{{timeLeft}} min left</div>
+    <div flx sdm10 plain>
+      <button (click)="onNavClick(-1)" style="width:100px">Previous</button>
+      <button (click)="onNavClick(1)" style="width:100px">Next</button>
+    </div>
+    <ng-template #showStop>
+      <span class="time-up">⚠ Time ran out!</span>
+    </ng-template>
   </div>
 </ng-container>

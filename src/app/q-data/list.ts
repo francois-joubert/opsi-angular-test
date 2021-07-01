@@ -1,7 +1,7 @@
 import { Observable, of, range } from "rxjs";
 import { concatMap, delay } from "rxjs/operators";
 
-export const words = ["🔟", "9️⃣", "8️⃣", "7️⃣", "6️⃣", "5️⃣", "4️⃣", "3️⃣", "2️⃣", "1️⃣","🚀"];
+export const words = ["10 - ", "9️ - ", "8️ - ", "7️ - ", "6️ - ", "5️ - ", "4️ - ", "3️ - ", "2️ - ", "1 - ", "🚀"];
 
 export function getStream(): Observable<string[]>
 {

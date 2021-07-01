@@ -3,3 +3,13 @@
   flex-direction: column;
   height: 100%;
 }
+
+.time {
+  color: blue;
+  font-weight: bold;
+}
+
+.time-up {
+  color: red;
+  font-weight: bold;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { differenceInMinutes, formatISO } from 'date-fns';
 
 @Component({
   selector: 'app',
@@ -7,30 +8,41 @@ import { Component } from '@angular/core';
 })
 export class AppComponent
 {
+  public startTime: Date;
   public q = 1;
+  public timeLeft = 10;
 
   public ngOnInit()
   {
-    let q = localStorage.getItem("q");
-    if (!q)
+    let t = localStorage.getItem("t");
+    if (t)
     {
-      localStorage.setItem("q", "99");
-      q = "99";
+      //debugger;
+      this.startTime = new Date(t);
+      this.q = +localStorage.getItem("q")!;
     }
 
-    this.q = +q;
+    this.updateTimeLeft();
+    setInterval(() => this.updateTimeLeft(), 10000);
   }
 
-  public onClick(dir: number)
+  public onStartClick()
   {
-    if (!dir)
-    {
-      this.q = 1;
-    }
-    else
-    {
-      this.q += dir;
-    }
+    this.startTime = new Date();
+    localStorage.setItem("t", formatISO(this.startTime));
+    localStorage.setItem("q", '1');
+  }
+
+  public onNavClick(dir: number)
+  {
+    this.q += dir;
     localStorage.setItem("q", this.q.toString());
+    this.updateTimeLeft();
+  }
+
+  private updateTimeLeft()
+  {
+    if (!this.startTime) { return; }
+    this.timeLeft = (this.q * 10) - differenceInMinutes(new Date(), this.startTime);
   }
 }
