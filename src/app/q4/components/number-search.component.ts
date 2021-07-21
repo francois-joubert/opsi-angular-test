@@ -28,7 +28,7 @@ export class NumberSearchComponent
     {
       let closestPair = this._numberSearchService.findClosestPair(
         testCase.value
-      );
+      ).sort();
 
       return {
         label: testCase.label,

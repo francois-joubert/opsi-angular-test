@@ -1,5 +1,5 @@
 export const numbersTestList = [
-  { label: "N = 3", value: [1, 2, 4], res: [0, 1] },
+  { label: "N = 3", value: [2, 4, 1], res: [0, 2] },
   {
     label: "N = 1000",
     value: [
@@ -1004,7 +1004,7 @@ export const numbersTestList = [
       998386,
       470098
     ],
-    res: [568, 569]
+    res: [149, 654]
   },
   { label: "N = 0", value: [], res: [0, 0] },
   { label: "undefined", value: undefined, res: [0, 0] },
