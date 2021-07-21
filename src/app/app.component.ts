@@ -43,6 +43,6 @@ export class AppComponent
   private updateTimeLeft()
   {
     if (!this.startTime) { return; }
-    this.timeLeft = (this.q * 10) - differenceInMinutes(new Date(), this.startTime);
+    this.timeLeft = (this.q * 10) + (this.q == 4 ? 20 : 0) - differenceInMinutes(new Date(), this.startTime);
   }
 }
