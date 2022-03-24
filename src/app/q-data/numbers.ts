@@ -1,4 +1,5 @@
 export const numbersTestList = [
+  { label: "Example", value: [99, 3, 12, 0, 18, 4, 22, 191, 7, 42], res: [1, 5]},
   { label: "N = 3", value: [2, 4, 1], res: [0, 2] },
   {
     label: "N = 1000",

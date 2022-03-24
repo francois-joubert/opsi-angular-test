@@ -1,6 +1,13 @@
 ﻿<ng-template #showStart>
-  <div flx v sacc plain>
-    <h1>Opsi Coding Test</h1>
+  <div flx v sacc plain style="margin: 0 100px;">
+    <h1>Opsi Angular Coding Test</h1>
+    <span flx-as><b>Before you start:</b></span>
+    <ul>
+      <li>Add any character to the file and save so that the forking process can start</li>
+      <li>You can change the theme (light/dark) to your preference</li>
+      <li>Each test have a time limit, but it should be plenty</li>
+      <li>You are welcome to ask questions at any time</li>
+    </ul>
     <h2>Good luck!</h2>
     <button (click)="onStartClick()" style="width:100px">Start</button>
   </div>
@@ -24,11 +31,11 @@
       <span nav>Navigate to: src/app/q1/list.component.html</span>
       <span text>Given a property of this component:</span>
       <span mono>public items: string[];</span>
-      <span text>Write the template part that would generate a span for each item, all contained in a single div.</span>
+      <span text>Write the html template that would generate a <i>span</i> for each item, all contained in a single <i>div</i>.</span>
       <h2>Question 1b</h2>
       <span text>Given a second property of this component:</span>
       <span mono>  public items$: Observable&lt;string[]&gt;;</span>
-      <span text>Copy the above template and adapt it to generate a span for each item in the observable array.</span>
+      <span text>Adapt the template to generate a span for each item in this observable array instead.</span>
       <app-list></app-list>
     </ng-container>
 
@@ -45,11 +52,10 @@
         &#125;<br>
       </span>
       <span text>
-        Import the <i>RandomNumberService</i> into this component and write the template part that would display
-        the number value from <i>getCurrentNumber()</i> inside the div.<br>
-        Use the button below to call <i>generateNewNumber()</i> to update the current-number.<br>
+        Import the <i>RandomNumberService</i> into this component and write the html template that would display the number value from <i>getCurrentNumber()</i> inside the div.<br>
+        Use the button below to call <i>generateNewNumber()</i> and update the current-number.<br>
         <br>
-        The first value received will be <i>undefined</i> - handle this case with a default message.
+        Note: The first value from the observable will be <i>undefined</i> - handle this case with a default message.
       </span>
       <app-numbers></app-numbers>
     </ng-container>
@@ -71,8 +77,8 @@
       <h2>Question 4</h2>
       <span nav>Navigate to: src/app/q4/services/number-search.service.ts</span>
       <span text>
-        Given that the input argument is a large array of positive integers
-        with length > 1 000 000 000.<br>
+        Given the input argument as a large array of positive integers.
+        <br>
         <br>
         Expand this method, using any standard built in functions, that would
         find the two indices of the numbers with the smallest numeric difference,
