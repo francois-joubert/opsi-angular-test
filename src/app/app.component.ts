@@ -10,7 +10,7 @@ export class AppComponent
 {
   public startTime: Date;
   public q = 1;
-  public timeLeft = 10;
+  public timeLeft = 7;
 
   public ngOnInit()
   {
@@ -43,6 +43,13 @@ export class AppComponent
   private updateTimeLeft()
   {
     if (!this.startTime) { return; }
-    this.timeLeft = (this.q * 10) + (this.q == 4 ? 20 : 0) - differenceInMinutes(new Date(), this.startTime);
+
+    let time = 0;
+    if (this.q == 1) { time = 7 }
+    else if (this.q == 2) { time = 17 }
+    else if (this.q == 3) { time = 27 }
+    else if (this.q >= 4) { time = 50 }
+
+    this.timeLeft = time - differenceInMinutes(new Date(), this.startTime);
   }
 }

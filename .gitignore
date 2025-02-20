@@ -4,6 +4,7 @@
 .project
 .vscode
 .idea/
+.angular/
 
 # Dependencies
 packages/

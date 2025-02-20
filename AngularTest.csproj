@@ -14,4 +14,8 @@
     <PackageReference Include="NuGet.Versioning" Version="5.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="dist\demo\" />
+  </ItemGroup>
+
 </Project>

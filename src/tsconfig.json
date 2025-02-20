@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ES2022",
     "moduleResolution": "node",
-    "lib": [ "es2018", "dom" ],
+    "lib": [ "ES2022", "dom" ],
     "typeRoots": [
       "node_modules/@types"
     ],
 
+    "skipLibCheck": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": false, // Too strict for the entire app - consider this for the core model only.
