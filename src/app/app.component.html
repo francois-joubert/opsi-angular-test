@@ -15,11 +15,6 @@
 
 <ng-container *ngIf="startTime; else showStart">
   <div flx v [ngSwitch]="q" plain style="padding:20px">
-    <ng-container *ngSwitchDefault>
-      <h2>Question {{q}}</h2>
-      <span mono>ERROR: You got yourself an index out of bounds exception!</span>
-    </ng-container>
-
     <ng-container *ngSwitchCase="0">
       <h2>Question 0</h2>
       <span text>Given your best friend, that is his own worst enemy and an enemy of a friend is an enemy.</span>
@@ -35,8 +30,8 @@
       <h2>Question 1b</h2>
       <span text>Given a second property of this component:</span>
       <span mono>  public items$: Observable&lt;string[]&gt;;</span>
-      <span text>Adapt the template to generate a span for each item in this observable array instead.</span>
-      <app-list></app-list>
+      <span text>Adapt the template to generate a <i>span</i> for each item from this observable array instead.</span>
+      <app-list />
     </ng-container>
 
     <ng-container *ngSwitchCase="2">
@@ -57,7 +52,7 @@
         <br>
         Note: The first value from the observable will be <i>undefined</i> - handle this case with a default message.
       </span>
-      <app-numbers></app-numbers>
+      <app-numbers />
     </ng-container>
 
     <ng-container *ngSwitchCase="3">
@@ -70,7 +65,7 @@
         if the input argument is a palindrome. It should return <i>true</i> if the argument
         is a palindrome and <i>false</i> otherwise.
       </span>
-      <app-palindrome-tester></app-palindrome-tester>
+      <app-palindrome-tester />
     </ng-container>
 
     <ng-container *ngSwitchCase="4">
@@ -95,24 +90,29 @@
         Then the answer would be [1, 5], since x[1] = 3 and x[5] = 4 have the
         smallest difference of 1.
       </span>
-      <app-number-search-tester></app-number-search-tester>
+      <app-number-search-tester />
     </ng-container>
 
     <ng-container *ngSwitchCase="5">
       <span text>No further questions, your honor.</span>
     </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <h2>Question {{q}}</h2>
+      <span mono>ERROR: You got yourself an index out of bounds exception!</span>
+    </ng-container>
   </div>
 
   <div flx-spacer plain></div>
   <div flx-sep plain style="margin:0 10px"></div>
+  
   <div flx ac jsb p10 plain>
     <div *ngIf="timeLeft > 0; else showStop" plain class="time">{{timeLeft}} min left</div>
+    <ng-template #showStop><span class="time-up">⚠ Time ran out!</span></ng-template>
+
     <div flx sdm10 plain>
       <button (click)="onNavClick(-1)" style="width:100px">Previous</button>
       <button (click)="onNavClick(1)" style="width:100px">Next</button>
     </div>
-    <ng-template #showStop>
-      <span class="time-up">⚠ Time ran out!</span>
-    </ng-template>
   </div>
 </ng-container>
